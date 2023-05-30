@@ -1,6 +1,6 @@
 
 
-### Easy A ###
+#---------- Easy A ----------#
 
 my_list = []   # Cоздали пустой список
 
@@ -13,7 +13,7 @@ print(my_list)
 
 
 
-### Easy B ###
+#---------- Easy B ----------#
 
 # Шаг 1: Через input().split() принимаем список, но все элементы будут в типе str
 # Шаг 2: Через функцию map() конвертируем все элементы в тип данных int
@@ -27,7 +27,7 @@ print(numbers)
 
 
 
-### Easy C ###
+#---------- Easy C ----------#
 
 numbers = list(map(int, input().split()))   # Принимаем список из Int
 
@@ -40,7 +40,7 @@ else:
 
 
 
-### Easy D ###
+#---------- Easy D ----------#
 
 numbers = list(map(int, input().split()))   # Принимаем список из Int
 res = sum(numbers) # Вычисляем сумму с помощью функций sum()
@@ -51,7 +51,7 @@ print("Сумма элементов списка:", res)
 
 
 
-### Medium A ###
+#---------- Medium A ----------#
 
 numbers = list(map(int, input().split()))   # Принимаем список из Int
 
@@ -64,7 +64,7 @@ for el in numbers:              # Итерируем список
 
 
 
-### Medium B ###
+#---------- Medium B ----------#
 
 numbers = list(map(int, input().split()))   # Принимаем список из Int
 
@@ -79,7 +79,7 @@ print(*numbers)
 
 
 
-### Medium C ###
+#---------- Medium C ----------#
 
 numbers = list(map(int, input().split()))   # Принимаем список из Int
 
@@ -91,7 +91,7 @@ print("Максимальный элемент списка:", ans)
 
 
 
-### Hard A ###
+#---------- Hard A ----------#
 
 numbers = list(map(int, input().split()))   # Принимаем список из Int
 spec_number = int(input())                  # Специальное число
@@ -108,7 +108,7 @@ for i in range(0, len(numbers)):            # Цикл начинающеся с
 
 
 
-### Hard B ###
+#---------- Hard B ----------#
 
 numbers = list(map(int, input().split()))   # Принимаем список из Int
 unique = []                                 # Список для уникальных элементов
@@ -122,7 +122,7 @@ for el in numbers:         # Итерация списка numbers
 print(*unique)
 
 
-### Hard C ###
+#---------- Hard C ----------#
 
 names = input().split()       # Принимаем список из строк
 

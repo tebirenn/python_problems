@@ -2,7 +2,7 @@
 
 
 
-### Easy A ###
+#---------- Easy A ----------#
 
 
 # Для конвертаций используем функцию eval(), которая может автоматический определять 
@@ -15,7 +15,7 @@ print(x)
 
 
 
-### Easy B ###
+#---------- Easy B ----------#
 
 length = int(input())  # Бесполезная для решения задачи
 numbers = list(map(int, input().split()))   # Вводится список из int
@@ -28,7 +28,7 @@ for el in numbers:     # Итерируем список
 
 
 
-### Medium A ###
+#---------- Medium A ----------#
 
 length = int(input())  # Бесполезная для решения задачи
 numbers = list(map(int, input().split()))   # Вводится список из int
@@ -42,7 +42,7 @@ print(max_el, max_el_index)
 
 
 
-### Medium B ###
+#---------- Medium B ----------#
 
 length = int(input())  # Бесполезная для решения задачи
 numbers = list(map(int, input().split()))   # Вводится список из int
@@ -56,7 +56,7 @@ print(ans)
 
 
 
-### Hard A ###
+#---------- Hard A ----------#
 
 length = int(input())  # Бесполезная для решения задачи
 numbers = list(map(int, input().split()))   # Вводится список из int
@@ -80,7 +80,7 @@ print(*numbers)
 
 
 
-### Hard B ###
+#---------- Hard B ----------#
 
 numbers = list(map(int, input().split()))   # Вводится список из int
 cnt = 0                                     # Для количества пар

@@ -1,7 +1,7 @@
 
 
 
-### Easy A ###
+#---------- Easy A ----------#
 
 for i in range(5, 16):   # Цикл от 5 по 15
     if i == 10:          # Если 10 то пропускаем
@@ -10,7 +10,7 @@ for i in range(5, 16):   # Цикл от 5 по 15
     print(i, end=" ")    # А остальные числа будут напечатаны
 
 
-### Easy B ###
+#---------- Easy B ----------#
 
 n = int(input("n: "))
 
@@ -20,7 +20,7 @@ for i in range(1, n+1):  # n+1 чтобы само число n входил в 
 
 
 
-### Easy C ###
+#---------- Easy C ----------#
 
 l = int(input("L: "))
 r = int(input("R: "))
@@ -32,7 +32,7 @@ for i in range(l, r+1):  # r+1 по той же причине как в Easy B
 
 
 
-### Easy D ###
+#---------- Easy D ----------#
 
 l = int(input("L: "))
 r = int(input("R: "))
@@ -44,7 +44,7 @@ for i in range(l, r-1, -1):     # r-1 чтобы r был включительн
 
 
 
-### Medium A ###
+#---------- Medium A ----------#
 
 text = input("string: ")      # Принимаем строку
 
@@ -54,7 +54,7 @@ for symbol in text:           # Итерация по строке
 
 
 
-### Medium B ###
+#---------- Medium B ----------#
 
 a = int(input("a: "))
 b = int(input("b: "))
@@ -70,7 +70,7 @@ print("Сумма:", result)
 
 
 
-### Medium C ###
+#---------- Medium C ----------#
 
 a = int(input("a: "))
 b = int(input("b: "))
@@ -86,7 +86,7 @@ for nok in range(1, a*b+1):             # Рассматриваем все во
 
 
 
-### Hard A ###
+#---------- Hard A ----------#
 
 num = int(input("Number: "))
 
@@ -111,7 +111,7 @@ else:
 
     
 
-### Hard B ###
+#---------- Hard B ----------#
 
 n = int(input("Количество букв: "))
 result = 0                          # Сюда будем суммировать 
@@ -133,7 +133,7 @@ print("Сумма:", result)
 
 
 
-### Hard C ###
+#---------- Hard C ----------#
 
 a = int(input("a: "))
 b = int(input("b: "))

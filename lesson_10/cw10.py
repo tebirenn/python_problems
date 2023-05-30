@@ -1,145 +1,145 @@
 
 
 
-# ### Easy A ###
+#---------- Easy A ----------#
 
-# # Принимаем две строки 
+# Принимаем две строки 
 
-# first = input()
-# second = input()
+first = input()
+second = input()
 
-# # Если они одинаковы
-# if first == second:
-#     print("YES")
-# else:
-#     print("NO")
+# Если они одинаковы
+if first == second:
+    print("YES")
+else:
+    print("NO")
 
 
 
 
-# ### Easy B ###
+#---------- Easy B ----------#
 
-# text = input()      # Принимаем строку
-# text = text[::-1]   # Через срез переварачиваем строку
-# print(text)  
+text = input()      # Принимаем строку
+text = text[::-1]   # Через срез переварачиваем строку
+print(text)  
 
 
 
 
 
-# ### Easy C ###
+#---------- Easy C ----------#
 
-# text = input()      # Принимаем строку
-# l = int(input())
-# r = int(input())
+text = input()      # Принимаем строку
+l = int(input())
+r = int(input())
 
-# ans = text[l:r+1]   # Срезаем список от l по r
-# print(ans)
+ans = text[l:r+1]   # Срезаем список от l по r
+print(ans)
 
 
 
 
-# ### Easy D ### 
+#---------- Easy D ----------# 
 
-# text = input()              # Принимаем строку
-# middle = len(text) // 2     # Вычисляем центральный список
+text = input()              # Принимаем строку
+middle = len(text) // 2     # Вычисляем центральный список
 
-# first_part = text[ :middle]   # Срезаем первую половину строки  (от начала до центра)
-# second_part = text[middle: ]  # Срезаем второую половину строки (от центра до конца)
+first_part = text[ :middle]   # Срезаем первую половину строки  (от начала до центра)
+second_part = text[middle: ]  # Срезаем второую половину строки (от центра до конца)
 
-# # Первая половина маленькими буквами(метод lower), а вторая половина большими буквами(метод upper)
-# print(first_part.lower() + second_part.upper())
+# Первая половина маленькими буквами(метод lower), а вторая половина большими буквами(метод upper)
+print(first_part.lower() + second_part.upper())
 
 
 
 
 
 
-# ### Medium A ###
+#---------- Medium A ----------#
 
-# word = input()     # Принимаем строку
-# ans = ""
+word = input()     # Принимаем строку
+ans = ""
 
-# for letter in word:      # Итерируем строку
+for letter in word:      # Итерируем строку
 
-#     # Если буква маленькая 
-#     if letter.islower():
-#         ans += letter.upper()  # То добавляем его в строку ans уже как большую  
-#     else:
-#         ans += letter.lower()  # Иначе буква большая, добавляем букву как маленькую 
+    # Если буква маленькая 
+    if letter.islower():
+        ans += letter.upper()  # То добавляем его в строку ans уже как большую  
+    else:
+        ans += letter.lower()  # Иначе буква большая, добавляем букву как маленькую 
 
-# print(ans)
+print(ans)
 
 
 
 
 
-# ### Medium B ###
+#---------- Medium B ----------#
 
 
-# word = input()     # Принимаем строку
-# # два каунтера для больших и маленьких букв
-# cnt_lower = 0
-# cnt_upper = 0
+word = input()     # Принимаем строку
+# два каунтера для больших и маленьких букв
+cnt_lower = 0
+cnt_upper = 0
 
-# for letter in word:      # Итерируем строку
+for letter in word:      # Итерируем строку
 
-#     # Если буква маленькая 
-#     if letter.islower():
-#         cnt_lower += 1   # То в количество маленьких +1
-#     else:
-#         cnt_upper += 1   # Иначе наоборот
+    # Если буква маленькая 
+    if letter.islower():
+        cnt_lower += 1   # То в количество маленьких +1
+    else:
+        cnt_upper += 1   # Иначе наоборот
 
-# # Чтобы узнать код нужно умножить два значения 
-# print("Код от замка:", cnt_lower * cnt_upper)
+# Чтобы узнать код нужно умножить два значения 
+print("Код от замка:", cnt_lower * cnt_upper)
 
 
 
 
 
-# ### Medium C ###
+#---------- Medium C ----------#
 
-# word = input()     # Принимаем строку
+word = input()     # Принимаем строку
 
-# # Слово палиндром это слово которая с любой стороны одинаково читается 
-# # Если слово такая же если его перевернуть, то он палиндром
-# if word == word[::-1]:
-#     print("palindrome")
-# else:
-#     print("not palindrome")
+# Слово палиндром это слово которая с любой стороны одинаково читается 
+# Если слово такая же если его перевернуть, то он палиндром
+if word == word[::-1]:
+    print("palindrome")
+else:
+    print("not palindrome")
 
 
 
 
-# ### Hard A ###
+#---------- Hard A ----------#
 
-# text = input()     # Принимаем строку
-# summa = 0
+text = input()     # Принимаем строку
+summa = 0
 
-# for symbol in text:
+for symbol in text:
 
-#     if symbol.isdigit():        # Если символ это цифра
-#         summa += int(symbol)    # Добавляем в сумму конвертировав в int
+    if symbol.isdigit():        # Если символ это цифра
+        summa += int(symbol)    # Добавляем в сумму конвертировав в int
 
-# print("Сумма цифр среди символов:", summa)
+print("Сумма цифр среди символов:", summa)
 
 
 
 
 
-# ### Hard B ### 
+#---------- Hard B ----------# 
 
-# text = input().lower()     # Принимаем строку, сразу же все буквы меняем на маленькие
+text = input().lower()     # Принимаем строку, сразу же все буквы меняем на маленькие
 
-# # Самая близкая к концу алфавита самая большая по ASCII
-# max_symbol = max(text)     
+# Самая близкая к концу алфавита самая большая по ASCII
+max_symbol = max(text)     
 
-# print(max_symbol)
+print(max_symbol)
 
 
 
 
-### Hard C ###
+#---------- Hard C ----------#
 
 text = input()       # Принимаем строку
 key = int(input())   # Ключ для сдвига
