@@ -133,9 +133,9 @@ for i in range(n):
     all_grades += int(grade)
 
     if name not in journal.keys():
-        journal[name] = int(grade)
-    elif grade > journal[name]:
-        journal[name] = int(grade)
+        journal[name] = 0
+    
+    journal[name] += int(grade)
 
 for k, v in journal.items():
     print(f"{k}: {(v*100) / all_grades}%")
