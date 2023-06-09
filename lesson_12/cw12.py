@@ -105,19 +105,18 @@ for word, count in words_count.items():
 number = abs(int(input("число: ")))
 num_cnt = {}
 
-while True:
+while number != 0:
     last_digit = number % 10
 
-    if last_digit in num_cnt.keys():
+    if last_digit not in num_cnt.keys():
         num_cnt[last_digit] = 0
 
     num_cnt[last_digit] += 1
 
-    if number == 0:
-        break
-    else:
-        number //= 10
+    number //= 10
 
+for k, v in num_cnt.items():
+    print(k, v)
 
 
 
