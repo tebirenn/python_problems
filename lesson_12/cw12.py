@@ -2,10 +2,13 @@
 
 #---------- Easy A ----------#
 
+# Создали два списка указанных в задаче 
 keys = ["Ten", "Twenty", "Thirty"] 
 values = [10, 20, 30] 
 
-res = dict(zip(keys, values))
+# Через функцию zip обьеденили два списка и через dict получаем готовый словарь из двух списков
+# Элементы от первой указанной коллекций будут использованы ввиде ключей, а от второй как значения
+res = dict(zip(keys, values)) 
 print(res)
 
 
@@ -26,6 +29,9 @@ sample_dict = {
     } 
 } 
 
+# Большинство ключей имеют значение ввиде еще одного словаря
+# Так что обращясь по неким ключам, мы берем значение, а значение может оказаться еще один словарь со своими ключами
+# Изза этого "путь" до значения 80 выглядит так:
 print(sample_dict["class"]["student"]["marks"]["history"])
 
 
@@ -41,11 +47,13 @@ d = {
     "ads": 70 
 }
 
-min_value = min(d.values())
+min_value = min(d.values())  # Сначала нашли то самое минимальное значение
 
-for k, v in d.items():
-    if v == min_value:
-        print(k)
+# Пора искать ключ этого минимального значения
+for k, v in d.items():       # Итерируем словарь по ключам и значениям
+    if v == min_value:       # Если какое то значение равен к минимальному
+        print(k)             # То нам нужен его ключ
+
 
 
 
@@ -57,9 +65,9 @@ info = {
     "grades": [96, 78, 67, 73, 90]
 }
 
-aidana_grades = info["grades"]
+aidana_grades = info["grades"]  # Чтобы каждый раз не писать ключ "grades" сохранили список в его значениях отдельно в переменную
 
-res = sum(aidana_grades) / len(aidana_grades)
+res = sum(aidana_grades) / len(aidana_grades) # Среднее значение = сумма / количество
 print(res)
 
 
@@ -68,15 +76,15 @@ print(res)
 
 #---------- Medium A ----------#
 
-journal = {}
-n = int(input("n: "))
+journal = {}             # Имя студента будет ключом, а оценка значением
+n = int(input("n: "))    # Количество студентов
 
-for i in range(n):
-    name, grade = input().split()
-    journal[name] = int(grade)
+for i in range(n):       # Цикл на n раз
+    name, grade = input().split()    # Принимаем с консоли два значения: имя и оценку
+    journal[name] = int(grade)       # Добавляем их в журнал(dict)
 
 print("name | grade")
-for k, v in journal.items():
+for k, v in journal.items():   # Как всех добавили, грамотно принтуем как показано в задаче
     print(f"{k}: {v}")
 
 
@@ -85,14 +93,15 @@ for k, v in journal.items():
 
 #---------- Medium B ----------#
 
-words = input().split()
-words_count = dict.fromkeys(words, 0)
+words = input().split()                         # Принимаем список слов
+words_count = dict.fromkeys(words, 0)           # Все слова в списке words будут установлены как ключи и в значениях у всех будет 0
 
-for word in words:
-    words_count[word] += 1
+for word in words:                              # Далее итерируем список слов
+    words_count[word] += 1                      # И каждому в значение будем добавлять по 1
+                                                # Таким образом посчитаем количество каждого слова
 
-for word, count in words_count.items():
-    print(word, count)
+for word, count in words_count.items():         # Итерируя ключи(слово) и значения(количество этого слова в списке)
+    print(word, count)                          # Выводим их в консоль
 
 
 
@@ -100,21 +109,24 @@ for word, count in words_count.items():
 
 #---------- Medium C ----------#
 
-### в задаче надо было сказать какие числа сколько раз встречались 
+### в задаче надо было сказать какие цифры сколько раз встречались в числе
 
-number = abs(int(input("число: ")))
-num_cnt = {}
+number = abs(int(input("число: ")))     # Через abs сразу избавляемся от знака -, если число будет отрицательное
+num_cnt = {}                            # Список где цифра будет ключом, а в значениях его количество
 
-while number != 0:
-    last_digit = number % 10
+while number:                           # Пока в числе есть какие то цифры, пока он не ноль
+    last_digit = number % 10            # Сохраняем его последнюю цифру
+    number //= 10                       # От последней цифры можно избавиться, мы её уже сохранили
 
-    if last_digit not in num_cnt.keys():
-        num_cnt[last_digit] = 0
+    # Как в предыдущей задаче у нас нет возможности использовать fromkeys чтобы создать ключи из цифр(int это не коллекция)
+    # Придется в ручную создавать самим, но нужно проверить чтобы такого ключа которую мы хотим создать ранее не было
+    if last_digit not in num_cnt.keys(): # Если цифры нет в ключах словаря
+        num_cnt[last_digit] = 0          # Тогда создадим её со сначением 0
 
-    num_cnt[last_digit] += 1
+    num_cnt[last_digit] += 1            # Далее можем быть уверенным что ключ ввиде нашей цифры существует, можем прибавлять ее количество
 
-    number //= 10
-
+    
+# Далее выводим всю информацию в словаре
 for k, v in num_cnt.items():
     print(k, v)
 
@@ -123,20 +135,22 @@ for k, v in num_cnt.items():
 
 #---------- Hard A ----------#
 
-journal = {}
-n = int(input("n: "))
-all_grades = 0
+journal = {}             # Имя студента будут ключами а их общие оценки значением
+n = int(input("n: "))    # Количество студентов
+all_grades = 0           # Переменная для всех оценок
 
-for i in range(n):
-    name, grade = input().split()
-    all_grades += int(grade)
+for i in range(n):       # Цикл на n раз
+    name, grade = input().split()       # Принимаем с консоли два значения: имя и оценку
+    all_grades += int(grade)            # В общие оценки суммировали оценку текущего студента
 
-    if name not in journal.keys():
-        journal[name] = 0
+    if name not in journal.keys():      # Если данный студент раньше не встречался в ключах
+        journal[name] = 0               # Тогда создадим его со значением ноль(Пока без оценок)
     
-    journal[name] += int(grade)
+    journal[name] += int(grade)         # Далее к значению студента добавим его баллы
 
-for k, v in journal.items():
+
+for k, v in journal.items():            # Итерируем ключ(Имя студента) и значение(Общаяя оценка студента) словаря
+    # Далее выводим имя студента и его оценку в процентах от общей суммы оценок
     print(f"{k}: {(v*100) / all_grades}%")
 
 
@@ -145,23 +159,25 @@ for k, v in journal.items():
 
 #---------- Hard B ----------#
 
-accounts = {}
+accounts = {}                           # Логин будет ключом, а пароль значением
 
-n = int(input("n: "))
-for i in range(n):
-    login, password = input().split()
-    accounts[login] = password
+n = int(input("n: "))                   # Принимаем число n(количество вводимых аккаунтов)
+for i in range(n):                      # Цикл ровно на n раз
+    login, password = input().split()   # Принимаем с консоли логин и пароль
+    accounts[login] = password          # Добавляем их в словарь(логин как ключ, пароль его значение)
 
-n = int(input("n: "))
-for i in range(n):
-    login, password = input().split()
+n = int(input("n: "))                   # Принимаем число n(количество вводимых аккаунтов)
+for i in range(n):                      # Цикл ровно на n раз
+    login, password = input().split()   # Принимаем с консоли логин и пароль
 
-    if login not in accounts.keys():
-        print("user not defined")
-    elif accounts[login] == password:
-        print("welcome")
-    else:
-        print("wrong password")
+    if login not in accounts.keys():    # Если данного логина не существует в ключах
+        print("user not defined")       # то сообщаем что такой юзер нам не известен
+
+    elif accounts[login] == password:   # Иначе-если проверим пароль который храниться в словаре с парлолем которую ввел пользователь
+        print("welcome")                # Пользователя можно пускать если пороли совпадают
+
+    else:                               # Иначе пользователь введ свой пароль не корректно
+        print("wrong password")         # Сообщаем что пароль некорректный
     
 
 
@@ -169,18 +185,25 @@ for i in range(n):
 
 #---------- Hard C ----------#
 
-word = input()
-letter_cnt = dict.fromkeys(word, 0)
+word = input("Word: ")                  # Приняли с консоли слово
+letter_cnt = dict.fromkeys(word, 0)     # Все буквы в слове word будут установлены как ключи и в значениях у всех будет 0
 
-for letter in word:
-    letter_cnt[letter] += 1
+for letter in word:                     # Итерируем буквы в слове word             
+    letter_cnt[letter] += 1             # Добавляем каждому в количество 1(Некоторым буквам будет добавлено больше чем 1 раз)
 
-odd_count = 0
-for value in letter_cnt.values():
-    if value % 2 == 1:
-        odd_count += 1
 
-if odd_count > 1:
-    print("wasted")
+# Слово палиндром - это слово который читает вперед и назад одинаково
+# В таких словах буквы с нечетным количеством могут быть максимум 1 раз
+# Например у нас такие буквы: aaccaadee (У всех букв кроме буквы "d" есть пара)
+# Можно составить такое слово: aeacdcaea 
+# Поставили букву у которой нет пары в центр, если таких букв без пары уже две или больше, то не смогли бы составить слово палиндром
+
+odd_count = 0                           # Так что придется посчитать, сколько букв у нас без пары           
+for value in letter_cnt.values():       # Количество каждой буквы у нас в значениях, итерируем их
+    if value % 2 == 1:                  # Если значение будет нечетным
+        odd_count += 1                  # Мы нашли букву без пары, считаем её в количество
+
+if odd_count > 1:                       # Если букв без пары больше 1
+    print("wasted")                     # Слово палиндром из них не составишь
 else:
-    print("we can do it")
+    print("we can do it")               # Иначе можно

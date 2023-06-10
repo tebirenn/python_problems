@@ -2,30 +2,31 @@
 
 #---------- Easy A ----------#
 
-numbers = set(map(int, input().split()))
-res = set()
+numbers = set(map(int, input().split()))    # Принимаем сет чисел
+res = set()                                 # Пустой сет для нужных чисел
 
-for el in numbers:
-    if el % 3 != 0:
-        res.add(el)
+for el in numbers:                          # Итерируем все числа в начальном сете
+    if el % 3 != 0:                         # и те которые не деляться на 3
+        res.add(el)                         # Добавляем в новый сет
 
 print(res)
 
 
 
 
+
 #---------- Easy B ----------#
 
-numbers = set(map(int, input().split()))
-res = set()
+numbers = set(map(int, input().split()))    # Принимаем сет чисел
+res = set()                                 # Пустой сет для нужных чисел
 
-for el in numbers:
-    k = 0
-    while el >= 2**k:
-        if el == 2**k:
-            res.add(el)
+for el in numbers:                          # Итерируем все числа в начальном сете
+    k = 0                                   # k для степени, начальная степень это ноль
+    while el >= 2**k:                       # Пока наш элемент больше чем 2 в k-степени
+        if el == 2**k:                      # Если наш элемент равень к какому то степени двойки
+            res.add(el)                     # он сам являеться степенью двойки, добавляем в новый сет
 
-        k += 1
+        k += 1                              # k-каждый раз прибавляется чтобы рассматривать другие степени двойки
 
 print(res)
 
@@ -35,7 +36,7 @@ print(res)
 
 #---------- Medium A ----------#
 
-numbers = set(map(int, input().split()))
+numbers = set(map(int, input().split()))        # Принимаем сет чисел
 
 print(f"Максимальный элемент - {max(numbers)}")
 print(f"Минимальный элемент - {min(numbers)}")
@@ -43,11 +44,11 @@ print(f"Минимальный элемент - {min(numbers)}")
 
 
 
+
 #---------- Medium B ----------#
 
-numbers = set(map(int, input().split()))
-print(len(numbers))
-
+numbers = set(map(int, input().split()))        # Принимаем сет чисел
+print(len(numbers))                             # Нужно сказать сколько неповтояющихся чисел, выводим длину множества
 
 
 
@@ -55,15 +56,16 @@ print(len(numbers))
 
 #---------- Hard A ----------#
 
-numbers = list(map(int, input().split()))
-res = set()
+numbers = list(map(int, input().split()))       # Принимаем СПИСОК чисел
+res = set()                                     # Пустой сет для нужных чисел
 
-for el in numbers:
-    if el in res:
-        print("YES")
-    else:
-        print("NO")
-        res.add(el)
+for el in numbers:                              # Итерируем список
+    if el in res:                               # Если элемент уже добавлен в сет
+        print("YES")                            # Такой элемент мы ранее встречали
+
+    else:                                       # Иначе элемент не был добавлен в сет
+        print("NO")                             # Говорим что мы такой элемент ранее не встречали
+        res.add(el)                             # Так как только что встретили, добавим элемент в сет
 
 
 
@@ -71,22 +73,22 @@ for el in numbers:
 
 #---------- Hard B ----------#
 
-words = set()
+words = set()                                   # Сет для слов
 
-n = int(input("n: "))
+n = int(input("n: "))                           # Количество вводов
 
-for i in range(n):
-    sentence = input().split()
+for i in range(n):                              # Цикл на n раз
+    sentence = input().split()                  # Принимаем список строк
+
     # words.update(sentence)  # Альтернатива циклу ниже
-    for word in sentence:
+
+    for word in sentence:                       # Итерируем список из строк
+
+        # В строках нужно избавиться от лишних символов, заменяя их на пустую строку
         word = word.replace(".", "").replace(";", "").replace(":", "").replace(",", "")
-        words.add(word.lower())
 
-print(len(words))
+        words.add(word.lower())                 # Добавляем очищенное от лишних символов слово в нижнем регистре в множетсво 
 
+# И в конце концов, нам надо сказать сколько слов у нас накопилось(не считая повторных)
+print(len(words))   # Просто выводим длину множества
 
-# 4
-# She sells sea shells on the sea shore;
-# The shells that she sells are sea shells I'm sure.
-# So if she sells sea shells on the sea shore,
-# I'm sure that the shells are sea shore shells.
