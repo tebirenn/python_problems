@@ -105,7 +105,7 @@ def sum_of_digits(number: int) -> int:  # Принимает один аргум
     res_sum = 0
     number = abs(number)
 
-    while number >= 0:
+    while number > 0:
         res_sum += number % 10
         number //= 10
 
