@@ -1,10 +1,11 @@
 #---------- Easy A ----------#
 
-from math import sqrt
+from math import sqrt  # sqrt это квадратный корень
 
 a = int(input("a="))
 b = int(input("b="))
 
+# Собираем формулу как показано на заданий 
 print((sqrt(a) - sqrt(b))**2)
 
 
@@ -13,11 +14,12 @@ print((sqrt(a) - sqrt(b))**2)
 
 #---------- Easy B ----------#
 
-from math import tan, pi
+from math import tan, pi   # tan Это тангенс, pi переменная которая хранит точное значение числа Пи
 
 a = int(input("a="))
 b = int(input("b="))
 
+# Собираем формулу как показано на заданий 
 print(tan(-a * pi / b))
 
 
