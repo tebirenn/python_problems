@@ -54,28 +54,28 @@ file.close()                    # Работа закончена, закрыв�
 #---------- Hard  ----------#
 
 # --1
-open("new_ethics.txt", "x").close()
+open("new_ethics.txt", "x").close()     # Создаем файл new_ethics.txt
 
 
 # --2
-ethics = open("ethics.txt", "r", encoding="utf-8")
-new_ethics = open("new_ethics.txt", "w")
+ethics = open("ethics.txt", "r", encoding="utf-8")  # Открываем файл ethics.txt для чтения
+new_ethics = open("new_ethics.txt", "w")            # Открываем файл new_ethics.txt для записи
 
-for i in range(6):
-    line = ethics.readline()
-    new_ethics.write(line)
+for i in range(6):              # Создаем цикл на 6 раз
+    line = ethics.readline()    # Читаем одну линию из ethics.txt
+    new_ethics.write(line)      # Записываем эту линию в new_ethics.txt
 
 ethics.close()
-new_ethics.close()
+new_ethics.close()                  # Закрываем оба файла 
 
 
 # --3 --4 --5
 
-for i in range(1, 4): # i = 1, 2, 3
-    shutil.copy("new_ethics.txt", f"new_ethics_copy{i}.txt")
-    os.mkdir(f"ethics{i}")
-    shutil.move(f"new_ethics_copy{i}.txt", f"ethics{i}")
+for i in range(1, 4): # i = 1, 2, 3                             # Цикл на 3 раза (от 1 по 3)
+    shutil.copy("new_ethics.txt", f"new_ethics_copy{i}.txt")    # Создаем копию файла new_ethics.txt, вставив число i в названий
+    os.mkdir(f"ethics{i}")                                      # Создаем 3 папки ethics. Опять же с числом i в названий
+    shutil.move(f"new_ethics_copy{i}.txt", f"ethics{i}")        # Перемещаем созданный файл в созданную папку
 
 
 # --6
-os.remove("new_ethics.txt")
+os.remove("new_ethics.txt")         # Удаляем new_ethics.txt
