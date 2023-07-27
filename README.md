@@ -6,3 +6,4 @@
 <hr>
 <br>
 <p>Используется <b>python</b> версий <b>3.11</b></p>
+<a href="https://github.com/tebirenn">Ссылка на автора</a>
